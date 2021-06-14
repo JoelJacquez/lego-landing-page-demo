@@ -61,7 +61,17 @@ body {
   color: var(--red);
   font-weight: 300;
   text-decoration: none;
+  display: inline-block;
+  transition: all 0.5s ease;
 }
+.navbar__content ul li:hover a {
+  border-bottom: 3px solid var(--blue);
+  color: var(--blue);
+  font-weight: 700;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
 .main-content {
   animation: 2s main-content 0.7s ease-in-out;
   display: flex;
