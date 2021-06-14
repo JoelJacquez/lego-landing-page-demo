@@ -1,24 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,100&display=swap');
 :root {
-  --yellow: #ffd602;
-  --red: #d5040a;
   --blue: #036cb6;
+  --red: #d5040a;
+  --yellow: #ffd602;
 }
 body {
+  font-family: 'Lato', sans-serif;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  font-family: 'Lato', sans-serif;
 }
 .page {
-  position: relative;
   height: 100vh;
+  position: relative;
 }
 .container {
-  position: absolute;
-  z-index: 1;
-
   display: grid;
+
   grid-template-columns: 55% 45%;
   grid-template-rows: 20% 50% 30%;
   grid-template-areas:
@@ -26,18 +24,20 @@ body {
     'section aside'
     'footer  aside';
   height: 100%;
+  position: absolute;
   width: 100%;
+  z-index: 1;
 }
 .navbar {
-  grid-area: nav;
   display: flex;
+  grid-area: nav;
 }
 .navbar__content {
-  display: flex;
   align-items: center;
-  width: 100%;
-  padding: 0 0 0 80px;
   animation: 2s navbar 0.5s ease-in-out;
+  display: flex;
+  padding: 0 0 0 80px;
+  width: 100%;
 }
 @keyframes navbar {
   from {
@@ -63,12 +63,12 @@ body {
   text-decoration: none;
 }
 .main-content {
-  grid-area: section;
+  animation: 2s main-content 0.7s ease-in-out;
   display: flex;
   flex-direction: column;
+  grid-area: section;
   justify-content: center;
   padding-left: 80px;
-  animation: 2s main-content 0.7s ease-in-out;
 }
 
 @keyframes main-content {
@@ -80,14 +80,14 @@ body {
   }
 }
 .main-content p:first-child {
+  margin: 0 0 -14px 40px;
   font-size: 36px;
   font-weight: 300;
-  margin: 0 0 -14px 40px;
 }
 .main-content h1 {
+  margin: 0 0 30px 0;
   font-size: 48px;
   font-weight: 700;
-  margin: 0 0 30px 0;
 }
 .main-content p:last-child {
   font-weight: 100;
@@ -97,23 +97,21 @@ body {
 
 .side-content {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
   grid-area: aside;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
 }
 .side-content p {
-  transform: rotate(-90deg);
-  font-size: 36px;
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-
-  opacity: 0;
-
-  animation-name: side-content-text;
-  animation-duration: 0.5s;
   animation-delay: 2.5s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-name: side-content-text;
+  animation-timing-function: ease-in-out;
+  font-size: 36px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  opacity: 0;
+  transform: rotate(-90deg);
 }
 
 @keyframes side-content-text {
@@ -127,10 +125,10 @@ body {
   }
 }
 .side-content img {
-  width: 100%;
+  animation: 2s side-content-img 1.2s ease-in-out;
   grid-column: 2 / 6;
   grid-row: 1 / 2;
-  animation: 2s side-content-img 1.2s ease-in-out;
+  width: 100%;
   z-index: 2;
 }
 @keyframes side-content-img {
@@ -146,25 +144,22 @@ body {
 }
 .side-content div {
   background: var(--yellow);
-
   grid-column: 4 / 7;
   grid-row: 1 / 2;
   height: 100%;
 }
 .footer {
-  display: flex;
-  justify-content: space-evenly;
   align-items: flex-end;
-
+  animation-delay: 2s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: footer;
+  animation-timing-function: ease-in-out;
   background: var(--yellow);
   border-radius: 0 80px 0 0;
+  display: flex;
+  justify-content: space-evenly;
   transform: translateY(100%);
-
-  animation-name: footer;
-  animation-duration: 0.5s;
-  animation-delay: 2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
 }
 @keyframes footer {
   from {
@@ -176,11 +171,11 @@ body {
 }
 .footer div {
   background: var(--blue);
-  width: 130px;
-  height: 50%;
   border-radius: 20px 20px 0 0;
   display: flex;
+  height: 50%;
   justify-content: center;
+  width: 130px;
 }
 .footer div:hover img {
   cursor: pointer;
@@ -188,25 +183,23 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 .footer div img {
-  width: 160px;
-  position: absolute;
   bottom: 50px;
-
+  position: absolute;
   transform: translateY(0px) scale(1);
   transition: transform 0.5s ease-in-out;
+  width: 160px;
 }
 
 .loader {
-  background: white;
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: center;
+  animation: loader 2s linear forwards;
+  background: white;
+  display: flex;
+  height: 100%;
   justify-content: center;
   position: absolute;
+  width: 100%;
   z-index: 3;
-
-  animation: loader 2s linear forwards;
 }
 @keyframes loader {
   0% {
@@ -223,13 +216,13 @@ body {
   }
 }
 .loader div {
+  animation: scaling 1.5s ease-in-out infinite;
   background: var(--yellow);
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
+  height: 40px;
   margin: 10px;
   transform: scale(0);
-  animation: scaling 1.5s ease-in-out infinite;
+  width: 40px;
 }
 .loader div:nth-child(1) {
   animation-delay: 0.2s;
@@ -261,20 +254,89 @@ body {
 }
 
 .modal {
-  width: 100%;
-  height: 100%;
   background: rgb(0, 0, 0, 0.5);
-  position: absolute;
-  z-index: 4;
-
-  /* display: grid; */
+  height: 100%;
   place-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
 }
 .modal__content {
+  align-items: center;
   background: white;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 40%;
   height: 50%;
+}
+.modal__content_button {
+  background: var(--red);
+  border: none;
+  box-shadow: 3px 3px 4px #bdbdbd;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 20px;
+  width: 240px;
 }
 .modal__content--close {
   cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.modal__content--slider {
+  height: 200px;
+  margin-bottom: 60px;
+  transform-origin: preserve-3d;
+  width: 300px;
+}
+.modal__content--slider input {
+  display: none;
+}
+.cards {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.card {
+  background: var(--yellow);
+  cursor: pointer;
+  display: grid;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  place-items: center;
+  position: absolute;
+  right: 0;
+  transition: transform 0.5s ease;
+  width: 50%;
+}
+.card img {
+  width: 100%;
+}
+
+#radio-1:checked ~ .cards #card-1,
+#radio-2:checked ~ .cards #card-2,
+#radio-3:checked ~ .cards #card-3 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 1;
+}
+#radio-1:checked ~ .cards #card-2,
+#radio-2:checked ~ .cards #card-3,
+#radio-3:checked ~ .cards #card-1 {
+  opacity: 0.5;
+  transform: translateX(40%) scale(0.8);
+  z-index: 0;
+}
+#radio-1:checked ~ .cards #card-3,
+#radio-2:checked ~ .cards #card-1,
+#radio-3:checked ~ .cards #card-2 {
+  opacity: 0.5;
+  transform: translateX(-40%) scale(0.8);
+  z-index: 0;
 }

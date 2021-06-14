@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diseña tu súper héroe</title>
+    <title>Design your super hero</title>
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
@@ -15,16 +15,16 @@
           <div class="navbar__content">
             <img src="./img/lego.png" alt="Logo" />
             <ul>
-              <li><a href="#EXCLUSIVOS">EXCLUSIVOS</a></li>
-              <li><a href="#NUEVOS">NUEVOS</a></li>
+              <li><a href="#EXCLUSIVE">EXCLUSIVE</a></li>
+              <li><a href="#NEWS">NEWS</a></li>
               <li><a href="#GIF-CARDS">GIF CARDS</a></li>
               <li><a href="#FIND-A-STORE">FIND A STORE</a></li>
             </ul>
           </div>
         </nav>
         <section class="main-content">
-          <p>Diseña tu</p>
-          <h1>Súper Héroe!</h1>
+          <p>Design your</p>
+          <h1>Super Hero!</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
             cupiditate adipisci doloribus sit enim numquam, quisquam magnam amet
@@ -52,13 +52,30 @@
         <div></div>
       </section>
       <!-- Modal -->
-      <section class="modal visible">
+      <section class="modal hidden">
         <div class="modal__content">
           <img
             class="modal__content--close"
             src="./img/close.png"
             alt="close icon"
           />
+          <div class="modal__content--slider">
+            <input type="radio" name="slider-1" id="radio-1" checked />
+            <input type="radio" name="slider-1" id="radio-2" />
+            <input type="radio" name="slider-1" id="radio-3" />
+            <div class="cards">
+              <label class="card" for="radio-1" id="card-1">
+                <img src="./img/spider-man.webp" alt="" />
+              </label>
+              <label class="card" for="radio-2" id="card-2">
+                <img src="./img/spider-man-2.webp" alt="" />
+              </label>
+              <label class="card" for="radio-3" id="card-3">
+                <img src="./img/spider-man-3.webp" alt="" />
+              </label>
+            </div>
+          </div>
+          <button class="modal__content_button">I want it</button>
         </div>
       </section>
     </div>
