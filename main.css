@@ -180,12 +180,23 @@ body {
   }
 }
 .footer div {
+  animation: footer 0.8s ease-out 3s forwards;
   background: var(--blue);
   border-radius: 20px 20px 0 0;
   display: flex;
   height: 50%;
   justify-content: center;
   width: 130px;
+  transform: translateY(calc(100% + 80px));
+}
+.footer div:nth-child(1) {
+  animation-delay: 2.5s;
+}
+.footer div:nth-child(2) {
+  animation-delay: 3s;
+}
+.footer div:nth-child(3) {
+  animation-delay: 3.5s;
 }
 .footer div:hover img {
   cursor: pointer;
@@ -327,6 +338,14 @@ body {
 }
 .card img {
   width: 100%;
+}
+@keyframes show-card {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 #radio-1:checked ~ .cards #card-1,
